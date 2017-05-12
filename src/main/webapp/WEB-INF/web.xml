@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>HWP</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+<login-config>
+  <auth-method>FORM</auth-method>
+</login-config>
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>HWP</web-resource-name>
+    <url-pattern>/</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>Everyone</role-name>
+    </auth-constraint>  
+</security-constraint> 
+<security-role>
+  <description>All SAP Cloud Platform users</description>
+  <role-name>Everyone</role-name>
+</security-role> 
+
+<resource-ref>
+    <res-ref-name>user/Provider</res-ref-name>
+    <res-type>com.sap.security.um.user.UserProvider</res-type>
+</resource-ref> 
+
+</web-app>
